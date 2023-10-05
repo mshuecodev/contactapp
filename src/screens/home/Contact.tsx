@@ -29,6 +29,7 @@ const ContactScreen: FC = ({navigation}: any) => {
 
   const onClickItem = () => {
     console.log('onpress item');
+    navigation.navigate('ContactDetail');
   };
 
   const onLongPressItem = () => {

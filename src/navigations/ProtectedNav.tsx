@@ -3,9 +3,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import HomeScreen from 'screens/home/Home';
 import HomeTab from './HomeTab';
-import DetailScreen from 'screens/home/Detail';
 import ContactFormScreen from 'screens/home/ContactForm';
 import GroupFormScreen from 'screens/home/GroupForm';
+import ContactDetailScreen from 'screens/home/ContactDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,9 +15,9 @@ const CahtStack: FC = () => {
       initialRouteName="Home"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={HomeTab} />
-      <Stack.Screen name="Detail" component={DetailScreen} />
       <Stack.Screen name="ContactForm" component={ContactFormScreen} />
       <Stack.Screen name="GroupForm" component={GroupFormScreen} />
+      <Stack.Screen name="ContactDetail" component={ContactDetailScreen} />
     </Stack.Navigator>
   );
 };

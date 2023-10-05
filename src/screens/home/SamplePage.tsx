@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import React, {FC} from 'react';
 
-const DetailScreen: FC = () => {
+const SamplpePage: FC = () => {
   return (
     <View>
-      <Text>DetailScreen</Text>
+      <Text>SamplpePage</Text>
     </View>
   );
 };
 
-export default DetailScreen;
+export default SamplpePage;
