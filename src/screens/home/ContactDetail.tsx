@@ -1,5 +1,5 @@
 import {ScrollView} from 'react-native';
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {
   Text,
   Box,
@@ -24,11 +24,24 @@ import {
   Heart,
   Ban,
 } from 'lucide-react-native';
+import PopOver from 'components/PopOver';
+
 import styles from 'themes/styles';
 
 const ContactDetail: FC = ({navigation}: any) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const onClickBack = () => {
     navigation.goBack();
+  };
+
+  const onClickMore = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    console.log('onclose');
+    setIsOpen(false);
   };
 
   return (
@@ -39,9 +52,38 @@ const ContactDetail: FC = ({navigation}: any) => {
             <Pressable onPress={onClickBack}>
               <ChevronLeft width={32} height={32} color="#6b59f2" />
             </Pressable>
-            <Pressable>
-              <MoreVertical width={32} height={32} color="#6b59f2" />
-            </Pressable>
+            <PopOver
+              size="sm"
+              isOpen={isOpen}
+              onClose={handleClose}
+              onOpen={onClickMore}
+              trigger={triggerProps => {
+                return (
+                  <Pressable {...triggerProps}>
+                    <MoreVertical width={32} height={32} color="#6b59f2" />
+                  </Pressable>
+                );
+              }}
+              content={
+                <VStack space="md">
+                  <Pressable>
+                    <Text>Place on Home Screen</Text>
+                  </Pressable>
+                  <Pressable>
+                    <Text>Voicemail not in use</Text>
+                  </Pressable>
+                  <Pressable>
+                    <Text>Delete contact</Text>
+                  </Pressable>
+                  <Pressable>
+                    <Text>share</Text>
+                  </Pressable>
+                  <Pressable>
+                    <Text>Set default SIM for calls</Text>
+                  </Pressable>
+                </VStack>
+              }
+            />
           </HStack>
         </Box>
 
