@@ -14,7 +14,7 @@ const MainNav: FC = () => {
 
   const getUserToken = async () => {
     // testing purposes
-    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    const sleep = (ms: any) => new Promise(r => setTimeout(r, ms));
     try {
       // custom logic
       await sleep(2000);
@@ -44,7 +44,7 @@ const MainNav: FC = () => {
         />
       ) : (
         // User is signed in
-        <Stack.Screen name="Home" component={LoggedInNav} />
+        <Stack.Screen name="Contact" component={LoggedInNav} />
       )}
     </Stack.Navigator>
   );

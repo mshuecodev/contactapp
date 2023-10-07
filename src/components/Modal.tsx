@@ -11,9 +11,6 @@ import {
   ModalBody,
   ModalFooter,
   CloseIcon,
-  Text,
-  Button,
-  ButtonText,
 } from '@gluestack-ui/themed';
 
 type ModalProps = {

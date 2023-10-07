@@ -4,7 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {View, Text} from 'react-native';
 
 import HomeScreen from 'screens/home/Home';
-import HomeStack from './HomeStack';
+// import HomeStack from './HomeStack';
 import ChatStack from './ChatStack';
 
 const Tab = createBottomTabNavigator();
@@ -20,7 +20,7 @@ const HomeTab: FC = () => {
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
 
-          if (route.name === 'Home') {
+          if (route.name === 'Contact') {
             iconName = focused ? 'call' : 'call-outline';
           } else if (route.name === 'Chat') {
             iconName = focused ? 'chatbox' : 'chatbox-outline';
@@ -32,8 +32,7 @@ const HomeTab: FC = () => {
         tabBarActiveTintColor: active,
         tabBarInactiveTintColor: inactive,
       })}>
-      {/* <Tab.Screen name="Home" component={HomeStack} /> */}
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Contact" component={HomeScreen} />
       <Tab.Screen name="Chat" component={ChatStack} />
     </Tab.Navigator>
   );

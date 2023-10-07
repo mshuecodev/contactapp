@@ -1,5 +1,5 @@
 import {ScrollView, Pressable} from 'react-native';
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import {
   Input,
   Box,
@@ -11,18 +11,20 @@ import {
   HStack,
   Avatar,
   AvatarFallbackText,
-  Button,
-  ButtonText,
-  ButtonIcon,
   AddIcon,
-  EditIcon,
   FabIcon,
   Fab,
 } from '@gluestack-ui/themed';
+import {useForm, Controller} from 'react-hook-form';
 
 import styles from 'themes/styles';
 
 const ContactScreen: FC = ({navigation}: any) => {
+  // store
+  // const dispatch = useDispatch();
+  // const store = useSelector(state => state.contacts);
+  // const {data} = store;
+
   const onAdd = () => {
     navigation.navigate('ContactForm');
   };
@@ -35,6 +37,14 @@ const ContactScreen: FC = ({navigation}: any) => {
   const onLongPressItem = () => {
     console.log('on long press item');
   };
+
+  useEffect(() => {
+    console.log('useeffect');
+    // dispatch(getContacts());
+  }, []);
+
+  // console.log('listcontact', data);
+
   return (
     <>
       <ScrollView style={styles.container}>
