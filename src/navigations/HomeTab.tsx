@@ -4,8 +4,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {View, Text} from 'react-native';
 
 import HomeScreen from 'screens/home/Home';
-// import HomeStack from './HomeStack';
 import ChatStack from './ChatStack';
+import NotificationScreen from 'screens/notifications/NotificationScreen';
+import SettingScreen from 'screens/settings/SettingScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,6 +18,7 @@ const HomeTab: FC = () => {
     <Tab.Navigator
       screenOptions={({route}) => ({
         headerShown: false,
+        tabBarShowLabel: false,
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
 
@@ -24,6 +26,10 @@ const HomeTab: FC = () => {
             iconName = focused ? 'call' : 'call-outline';
           } else if (route.name === 'Chat') {
             iconName = focused ? 'chatbox' : 'chatbox-outline';
+          } else if (route.name === 'Notification') {
+            iconName = focused ? 'notifications' : 'notifications-outline';
+          } else if (route.name === 'Setting') {
+            iconName = focused ? 'settings' : 'settings-outline';
           }
 
           // You can return any component that you like here!
@@ -34,6 +40,8 @@ const HomeTab: FC = () => {
       })}>
       <Tab.Screen name="Contact" component={HomeScreen} />
       <Tab.Screen name="Chat" component={ChatStack} />
+      <Tab.Screen name="Notification" component={NotificationScreen} />
+      <Tab.Screen name="Setting" component={SettingScreen} />
     </Tab.Navigator>
   );
 };
