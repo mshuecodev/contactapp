@@ -11,7 +11,8 @@
       "components/*": ["./src/components/*"],
       "img/*": ["./src/img/*"],
       "themes/*": ["./src/themes/*"],
-      "services/*": ["./src/services/*"]
+      "services/*": ["./src/services/*"],
+      "context/*": ["./src/context/*"]
     }
   }
 }

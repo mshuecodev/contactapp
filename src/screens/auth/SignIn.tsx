@@ -12,6 +12,9 @@ import {
   ButtonText,
 } from '@gluestack-ui/themed';
 
+// context
+import {useAuth} from 'context/index';
+
 type RootStackParamList = {
   SignIn: undefined;
   SignUp: undefined;
@@ -19,8 +22,21 @@ type RootStackParamList = {
 type Props = NativeStackScreenProps<RootStackParamList>;
 
 const SignInScreen = ({navigation}: Props) => {
+  const {userToken, setUserToken, isLoading, setIsLoading} = useAuth();
+
   const onSignUp = () => {
     navigation.navigate('SignUp');
+  };
+
+  const handleSignIn = async () => {
+    setIsLoading(true);
+    try {
+      setUserToken('1111');
+    } catch (err) {
+      alert(err);
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <Box flex={1} justifyContent="center">
@@ -36,7 +52,11 @@ const SignInScreen = ({navigation}: Props) => {
           <Input variant="outline" size="md">
             <InputField placeholder="Password" />
           </Input>
-          <Button size="md" variant="solid" action="primary">
+          <Button
+            size="md"
+            variant="solid"
+            action="primary"
+            onPress={handleSignIn}>
             <ButtonText>Sign In</ButtonText>
           </Button>
           <Button size="md" variant="link" action="primary">

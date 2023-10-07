@@ -6,11 +6,14 @@ import SplashScreen from 'screens/splash/Splash';
 import LoggedInNav from './ProtectedNav';
 import NotLoggedInNav from './PublicNav';
 
+// context
+import {useAuth} from 'context/index';
+
 const Stack = createNativeStackNavigator();
 
 const MainNav: FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [userToken, setUserToken] = useState(null); //public state
+  // context
+  const {userToken, setUserToken, isLoading, setIsLoading} = useAuth();
 
   const getUserToken = async () => {
     // testing purposes
@@ -18,7 +21,7 @@ const MainNav: FC = () => {
     try {
       // custom logic
       await sleep(2000);
-      const token = '111';
+      const token = null;
       setUserToken(token);
     } finally {
       setIsLoading(false);

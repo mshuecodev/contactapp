@@ -13,6 +13,7 @@ module.exports = {
           img: './src/img',
           themes: './src/themes',
           services: './src/services',
+          context: './src/context',
         },
       },
     ],
