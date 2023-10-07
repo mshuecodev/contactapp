@@ -18,6 +18,7 @@ import {
 } from '@gluestack-ui/themed';
 import {User, ChevronRight} from 'lucide-react-native';
 import styles from 'themes/styles';
+import colors from 'themes/color';
 
 const ContactFormScreen: FC = ({navigation}: any) => {
   const onClickGroup = () => {
@@ -36,7 +37,7 @@ const ContactFormScreen: FC = ({navigation}: any) => {
                 as={CloseIcon}
                 width={38}
                 height={38}
-                color="#6b59f2"
+                color={colors.primary}
               />
             </Button>
             <Heading>Save Contact</Heading>
@@ -45,7 +46,7 @@ const ContactFormScreen: FC = ({navigation}: any) => {
                 as={CheckIcon}
                 width={38}
                 height={38}
-                color="#6b59f2"
+                color={colors.primary}
               />
             </Button>
           </HStack>
@@ -72,8 +73,8 @@ const ContactFormScreen: FC = ({navigation}: any) => {
 
             <Pressable onPress={onClickGroup}>
               <HStack justifyContent="space-between" alignItems="center">
-                <Text color="#6b59f2">Group Name</Text>
-                <Icon as={ChevronRight} color="#6b59f2" />
+                <Text color={colors.primary}>Group Name</Text>
+                <Icon as={ChevronRight} color={colors.primary} />
               </HStack>
             </Pressable>
           </VStack>

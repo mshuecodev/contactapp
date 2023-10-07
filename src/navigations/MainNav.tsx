@@ -44,7 +44,7 @@ const MainNav: FC = () => {
         />
       ) : (
         // User is signed in
-        <Stack.Screen name="Contact" component={LoggedInNav} />
+        <Stack.Screen name="Home" component={LoggedInNav} />
       )}
     </Stack.Navigator>
   );

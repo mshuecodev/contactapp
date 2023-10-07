@@ -79,14 +79,6 @@ const ContactScreen: FC = ({navigation}: any) => {
 
       {/* static button */}
       <Box style={styles.btnStatic}>
-        {/* <Button
-          size="lg"
-          variant="solid"
-          action="primary"
-          borderRadius="$full"
-          bg="#6b59f2">
-          <ButtonIcon as={AddIcon} />
-        </Button> */}
         <Fab bg="#6b59f2" size="lg" onPress={onAdd}>
           <FabIcon as={AddIcon} />
         </Fab>

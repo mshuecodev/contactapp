@@ -22,7 +22,7 @@ const HomeTab: FC = () => {
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
 
-          if (route.name === 'Contact') {
+          if (route.name === 'Home') {
             iconName = focused ? 'call' : 'call-outline';
           } else if (route.name === 'Chat') {
             iconName = focused ? 'chatbox' : 'chatbox-outline';
@@ -38,7 +38,7 @@ const HomeTab: FC = () => {
         tabBarActiveTintColor: active,
         tabBarInactiveTintColor: inactive,
       })}>
-      <Tab.Screen name="Contact" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Chat" component={ChatStack} />
       <Tab.Screen name="Notification" component={NotificationScreen} />
       <Tab.Screen name="Setting" component={SettingScreen} />

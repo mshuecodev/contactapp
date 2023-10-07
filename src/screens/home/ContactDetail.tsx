@@ -27,6 +27,7 @@ import {
 import PopOver from 'components/PopOver';
 
 import styles from 'themes/styles';
+import colors from 'themes/color';
 
 const ContactDetail: FC = ({navigation}: any) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +51,7 @@ const ContactDetail: FC = ({navigation}: any) => {
         <Box p={10}>
           <HStack justifyContent="space-between" alignItems="center">
             <Pressable onPress={onClickBack}>
-              <ChevronLeft width={32} height={32} color="#6b59f2" />
+              <ChevronLeft width={32} height={32} color={colors.primary} />
             </Pressable>
             <PopOver
               size="sm"
@@ -60,7 +61,11 @@ const ContactDetail: FC = ({navigation}: any) => {
               trigger={triggerProps => {
                 return (
                   <Pressable {...triggerProps}>
-                    <MoreVertical width={32} height={32} color="#6b59f2" />
+                    <MoreVertical
+                      width={32}
+                      height={32}
+                      color={colors.primary}
+                    />
                   </Pressable>
                 );
               }}
@@ -89,12 +94,7 @@ const ContactDetail: FC = ({navigation}: any) => {
 
         <Box m={10}>
           {/* avatar section */}
-          <Box
-            position="absolute"
-            zIndex={1}
-            // backgroundColor="red"
-            top={10}
-            alignSelf="center">
+          <Box position="absolute" zIndex={1} top={10} alignSelf="center">
             <Avatar width={80} height={80}>
               <Icon as={User} color="white" size="xl" />
             </Avatar>
@@ -116,25 +116,13 @@ const ContactDetail: FC = ({navigation}: any) => {
                   <Text>+62 0000 0000</Text>
                 </VStack>
                 <HStack my={10} space="md">
-                  <Button
-                    borderRadius="$full"
-                    size="lg"
-                    bg="$indigo600"
-                    borderColor="$indigo600">
+                  <Button borderRadius="$full" size="lg" bg={colors.primary}>
                     <ButtonIcon as={MessageSquare} />
                   </Button>
-                  <Button
-                    borderRadius="$full"
-                    size="lg"
-                    bg="$indigo600"
-                    borderColor="$indigo600">
+                  <Button borderRadius="$full" size="lg" bg={colors.blue}>
                     <ButtonIcon as={Phone} />
                   </Button>
-                  <Button
-                    borderRadius="$full"
-                    size="lg"
-                    bg="$indigo600"
-                    borderColor="$indigo600">
+                  <Button borderRadius="$full" size="lg" bg={colors.success}>
                     <ButtonIcon as={Mail} />
                   </Button>
                 </HStack>

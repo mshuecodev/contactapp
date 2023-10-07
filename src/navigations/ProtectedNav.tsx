@@ -12,9 +12,9 @@ const Stack = createNativeStackNavigator();
 const CahtStack: FC = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Contact"
+      initialRouteName="Home"
       screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Contact" component={HomeTab} />
+      <Stack.Screen name="Home" component={HomeTab} />
       <Stack.Screen name="ContactForm" component={ContactFormScreen} />
       <Stack.Screen name="GroupForm" component={GroupFormScreen} />
       <Stack.Screen name="ContactDetail" component={ContactDetailScreen} />
