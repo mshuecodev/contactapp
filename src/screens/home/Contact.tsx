@@ -17,13 +17,13 @@ import {
 } from '@gluestack-ui/themed';
 import {useForm, Controller} from 'react-hook-form';
 
+// context
+import {useContact} from 'context/index';
+
 import styles from 'themes/styles';
 
 const ContactScreen: FC = ({navigation}: any) => {
-  // store
-  // const dispatch = useDispatch();
-  // const store = useSelector(state => state.contacts);
-  // const {data} = store;
+  const {getContacts, contacts}: any = useContact();
 
   const onAdd = () => {
     navigation.navigate('ContactForm');
@@ -39,11 +39,8 @@ const ContactScreen: FC = ({navigation}: any) => {
   };
 
   useEffect(() => {
-    console.log('useeffect');
-    // dispatch(getContacts());
+    getContacts();
   }, []);
-
-  // console.log('listcontact', data);
 
   return (
     <>
@@ -59,10 +56,10 @@ const ContactScreen: FC = ({navigation}: any) => {
           </Box>
 
           <Box my={10}>
-            {data &&
-              data?.map((item, index) => (
+            {contacts &&
+              contacts?.map((item: any) => (
                 <Pressable onPress={onClickItem} onLongPress={onLongPressItem}>
-                  <HStack space="md" key={index} my={10}>
+                  <HStack space="md" key={item._id} my={10}>
                     <Avatar bgColor="$amber600" size="md" borderRadius="$full">
                       <AvatarFallbackText>{item.name}</AvatarFallbackText>
                     </Avatar>

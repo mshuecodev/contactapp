@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // ===> api create
 const api = axios.create({
-  baseURL: 'http://192.168.110.59:100/',
+  baseURL: 'http://192.168.171.130:100/',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -11,7 +11,7 @@ const api = axios.create({
 });
 
 // endpoints
-const getContacts = () => api.get(`/contact`, data);
+const getContacts = () => api.get(`/contact`);
 const getDetail = (id: String) => api.get(`/contact/` + id);
 const createContact = (data: any) => api.post(`/contact`, data);
 const updateContact = (id: String, data: any) =>
